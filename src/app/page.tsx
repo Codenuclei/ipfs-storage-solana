@@ -85,7 +85,7 @@ const IpfsApiDocs = () => {
       </div>
 
       {/* Bottom spacing */}
-      <div className="h-12" />
+      <div className="h-14" />
     </div>
   );
 };
