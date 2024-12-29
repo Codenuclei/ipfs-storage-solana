@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
     
             const signature = await sendAndConfirmTransaction(web3, transaction, [keypair]);
             return signature;
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error('Transaction error:', error);
             throw error;
         }
