@@ -13,7 +13,7 @@ const IpfsApiDocs = () => {
         </p>
       </div>
 
-      {/* Request Section */}
+      {/* Request Section  */}
       <div className="space-y-8">
         <h2 className="text-2xl font-semibold text-gray-800">Request</h2>
         
