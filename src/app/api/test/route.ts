@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Stream } from "stream";
 import {PublicKey, clusterApiUrl, Connection,sendAndConfirmTransaction,SystemProgram, Transaction, Keypair, TransactionInstruction} from "@solana/web3.js"
 import pinataSDK from "@pinata/sdk";
 const connection = new pinataSDK(
@@ -83,8 +84,8 @@ export async function POST(req: NextRequest) {
     
 
   try {
-    const stream = require('stream');
-    const readableStream = new stream.PassThrough();
+    
+    const readableStream = new Stream.PassThrough();
     readableStream.end(buffer);
     
     const pinataResponse = await connection.pinFileToIPFS(readableStream, options);
