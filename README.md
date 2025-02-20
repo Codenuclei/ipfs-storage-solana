@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# File Upload to IPFS in Solana API
 
-## Getting Started
+## Overview
+This project allows users to upload files to IPFS (InterPlanetary File System) and interact with the Solana blockchain via API integration. It provides a seamless way to store files in a decentralized manner while leveraging Solana for transaction management.
 
-First, run the development server:
+## Features
+- Upload files to IPFS using Pinata or Web3 Storage.
+- Generate and retrieve IPFS hashes for uploaded files.
+- Store IPFS file metadata on the Solana blockchain.
+- Secure API endpoints for interaction.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+- **Blockchain**: Solana
+- **Storage**: IPFS (Pinata, Web3.Storage)
+- **Backend**: Next.js
+- **Frontend**: Next.js
+- **Database**: MongoDB / PostgreSQL (if needed)
+
+## Installation
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 16.x)
+- npm or yarn
+- Solana CLI
+- Pinata API Key (or Web3.Storage API Key)
+
+### Clone the Repository
+```sh
+git clone https://github.com/your-username/ipfs-solana-api.git
+cd ipfs-solana-api
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install Dependencies
+```sh
+npm install  # or yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Set Up Environment Variables
+Create a `.env` file and configure the following:
+```
+SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+PINATA_API_KEY=your_pinata_api_key
+PINATA_SECRET_API_KEY=your_pinata_secret_key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
+### Start the Server
+```sh
+npm run dev  # or yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Upload a File to IPFS
+Make a POST request to `/api/upload` with a file:
+```sh
+curl -X POST -F "file=@path/to/your/file" http://localhost:3000/api/upload
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Store Metadata on Solana
+Make a POST request to `/api/store` with metadata and IPFS hash:
+```sh
+curl -X POST -H "Content-Type: application/json" -d '{ "ipfsHash": "your_ipfs_hash" }' http://localhost:3000/api/store
+```
 
-## Deploy on Vercel
+## API Endpoints
+| Method | Endpoint      | Description                         |
+|--------|--------------|-------------------------------------|
+| POST   | `/api/ipfs` | Uploads a file to IPFS             |
+| GET    | `/api/test`   | Test endpoint                      |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is licensed under the MIT License.
+
+## Contributions
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## Contact
+For any queries, contact [your-email@example.com](mailto:your-email@example.com).
+
