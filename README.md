@@ -14,20 +14,18 @@ This project allows users to upload files to IPFS (InterPlanetary File System) a
 - **Storage**: IPFS (Pinata, Web3.Storage)
 - **Backend**: Next.js
 - **Frontend**: Next.js
-- **Database**: MongoDB / PostgreSQL (if needed)
 
 ## Installation
 ### Prerequisites
 Ensure you have the following installed:
 - Node.js (>= 16.x)
 - npm or yarn
-- Solana CLI
 - Pinata API Key (or Web3.Storage API Key)
 
 ### Clone the Repository
 ```sh
-git clone https://github.com/your-username/ipfs-solana-api.git
-cd ipfs-solana-api
+git clone https://github.com/Codenuclei/ipfs-storage-solana.git
+cd ipfs-storage-solana
 ```
 
 ### Install Dependencies
@@ -77,5 +75,5 @@ This project is licensed under the MIT License.
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## Contact
-For any queries, contact [your-email@example.com](mailto:abhishekghoshedu@gmail.com).
+For any queries, contact [abhishekghoshedu@gmail.com](mailto:abhishekghoshedu@gmail.com).
 
